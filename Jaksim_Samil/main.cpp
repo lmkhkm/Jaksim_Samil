@@ -35,7 +35,7 @@ public:
 	void GenerateDate(int month)
 	{
 		int startDate = 0;
-		int nowDay = 0;
+		int nowDay = 1;
 
 		for (int i = 0; i < month; i++)
 		{
@@ -61,8 +61,9 @@ public:
 				}
 				else
 				{
-					nowDay++;
+					
 					this->date[j][k] = nowDay;
+					nowDay++;
 				}
 			}
 		}
@@ -100,7 +101,7 @@ void loop(void)
 
 int main(void)
 {
-	Calendar calendar(100, 2);
+	Calendar calendar(100, 1);
 }
 
 
