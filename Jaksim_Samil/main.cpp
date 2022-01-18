@@ -8,19 +8,6 @@
 #include"MainSystem.h"
 using namespace std;
 
-void loop(void)
-{
-	
-	if (false)
-	{
-		return ;
-	}
-	else
-	{
-
-	}
-}
-
 int main(void)
 {
 	MainSystem sys = MainSystem(2022, 2);

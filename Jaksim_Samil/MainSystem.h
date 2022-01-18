@@ -2,6 +2,9 @@
 #define MAINSYSTEM_H
 
 #include"Calendar.h"
+#include <iostream>
+#include <stdlib.h>
+#include <cstring>
 
 class MainSystem
 {

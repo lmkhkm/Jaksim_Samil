@@ -1,9 +1,6 @@
 #include "MainSystem.h"
-#include <iostream>
-#include <stdlib.h>
 
 using namespace std;
-
 
 MainSystem::MainSystem(int year, int month)
 {
@@ -20,14 +17,14 @@ void MainSystem::ClearShell()
 
 void MainSystem::loop()
 {
-	int status = 0;
-
-	ClearShell();
+	char status[100];
 	
 	this->calender->PrintCalendar();
 	cout << endl << "Input Status: ";
 	cin >> status;
-	if (status == 1)
+	cout << status << endl;
+
+	if (!strcmp(status,"chd"))
 	{
 		cout << "Change Date" << endl;
 		cout << "Year: ";
@@ -35,6 +32,14 @@ void MainSystem::loop()
 		cout << endl << "Month: ";
 		cin >> this->month;
 		this->calender->GenerateDate(this->year, this->month);
+		this->ClearShell();
+	}
+	else if (!strcmp(status, "-help"))
+	{
+		cout << "Command" << endl;
+		cout << "-help: show entire command" << endl;
+		cout << "chd: change date" << endl;
+		cout << "--END--" << endl;
 	}
 	else
 	{
