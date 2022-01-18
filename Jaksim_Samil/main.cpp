@@ -18,6 +18,8 @@ void loop(void)
 int main(void)
 {
 	Calendar calendar(100, 1);
+	calendar.GenerateDate(2021, 12);
+	calendar.PrintCalendar();
 }
 
 

@@ -5,7 +5,7 @@ using namespace std;
 Calendar::Calendar(int nowDate, int month)
 {
 	this->nowDate = nowDate;
-	GenerateDate(month);
+	GenerateDate(DEFALTYEAR, month);
 	PrintCalendar();
 }
 
@@ -14,14 +14,46 @@ int Calendar::GetNowDate()
 	return(this->nowDate);
 }
 
-void Calendar::GenerateDate(int month)
+void Calendar::GenerateDate(int year, int month)
 {
 	int startDate = 0;
 	int nowDay = 1;
+	int yearDiffrence = year - DEFALTYEAR;
+
+	/*
+	그래고리력
+	4의 배수는 366일
+	100의 배수는 그냥
+	400의 배수는 366일
+	*/
+	if (yearDiffrence > 0)//1970년보다 앞설 때
+	{
+		for (int i = 0; i < yearDiffrence; i++)
+		{
+			if (i / 4 == 2)
+			{
+				startDate += 366;
+			}
+			else
+			{
+				startDate += 365;
+			}
+		}
+	}
+	else//1970년 이전일 때 = 구현 중
+	{
+
+	}
+	
 
 	for (int i = 0; i < month; i++)
 	{
-		startDate += MONTHDATE[i];
+		if (year / 4 == 0 && i == 2)
+		{
+			startDate += MONTHDATE[i] + 1;
+		}
+		else
+			startDate += MONTHDATE[i];
 	}
 	startDate -= 1;
 	if (startDate < 0)
