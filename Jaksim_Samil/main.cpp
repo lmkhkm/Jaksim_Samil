@@ -5,21 +5,29 @@
 
 #include<iostream>
 #include"Calendar.h"
+#include"MainSystem.h"
 using namespace std;
 
 void loop(void)
 {
+	
 	if (false)
 	{
 		return ;
+	}
+	else
+	{
+
 	}
 }
 
 int main(void)
 {
-	Calendar calendar(100, 1);
-	calendar.GenerateDate(2021, 12);
-	calendar.PrintCalendar();
+	MainSystem sys = MainSystem(2022, 2);
+	while (true)
+	{
+		sys.loop();
+	}
 }
 
 
